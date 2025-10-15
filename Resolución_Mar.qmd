@@ -47,6 +47,9 @@ p1_opt$AlternativaOptima
 p1_hur = criterio.Hurwicz(tabla1,T)
 p1_hur$AlternativaOptima
 
+# Estudio de la mejor alternativa en función del valor de alfa
+dibuja.criterio.Hurwicz(tabla1, favorable=TRUE)
+
 # Savage
 p1_savage = criterio.Savage(tabla1,T)
 p1_savage$AlternativaOptima
@@ -74,6 +77,8 @@ tt(criterio.Todos(tabla1, 0.5, favorable = TRUE), rownames = TRUE)
 
 Hemos realizado todos los métodos de incertidumbre por separado y los visualizamos todos juntos con el criterio todos. En el caso de que la tabla sea de beneficios, llegamos a la conclusión de que la **alternativa d1** es la alternativa óptima ya que todos los métodos la eligen como la óptima. Como no tenemos un contexto del problema, no podemos decir más.
 
+Además hemos estudiado la decisión según el método Hurzwisc en función del valor de alfa, obteniendo que que para cualquier valor de alfa la decisión óptima con dicho método es la alternativa d1.
+
 **Apartado 2:** Análogamente resolvamos el problema suponiendo ahora que los datos son costes
 
 ```{r}
@@ -88,6 +93,12 @@ p2_opt$AlternativaOptima
 # Hurwicz
 p2_hur = criterio.Hurwicz(tabla1,F)
 p2_hur$AlternativaOptima
+
+# Estudio de la mejor alternativa en función del valor de alfa
+dibuja.criterio.Hurwicz(tabla1, favorable=FALSE)
+
+# Obtengo el resultado de cual es la mejor alternativa para cada cada valor de alfa
+dibuja.criterio.Hurwicz_Intervalos(tabla1, favorable =FALSE)
 
 # Savage
 p2_savage = criterio.Savage(tabla1,F)
@@ -115,6 +126,8 @@ tt(criterio.Todos(tabla1, 0.5, favorable = FALSE), rownames = TRUE)
 ## Conclusión
 
 Hemos realizado todos los métodos de incertidumbre por separado y los visualizamos todos juntos con el criterio todos. En el caso de que la tabla sea de costes, llegamos a la conclusión de que la **alternativa d4** es la alternativa óptima ya que 5 de los 6 métodos la eligen como la óptima.
+
+Además hemos estudiado la decisión según el método Hurzwisc en función del valor de alfa, obteniendo que si alfa está en el intervalo (0,0.8) la alternativa óptima es d4, sin embargo, si alfa\>0.8 seleccionaría la alternativa d3.
 
 \newpage
 
@@ -149,6 +162,13 @@ colnames(tabla2) = c("Alta demanda", "Media", "Baja")
 p3_todos = criterio.Todos(tabla2,alfa=0.5, T)
 # p3_todos
 
+# Estudio de la mejor alternativa en función del valor de alfa
+dibuja.criterio.Hurwicz(tabla2, favorable=T)
+
+# Obtengo el resultado de cual es la mejor alternativa para cada cada valor de alfa
+dibuja.criterio.Hurwicz_Intervalos(tabla2, favorable =T)
+
+
 # tinytex::reinstall_tinytex(repository = "illinois")
 # tinytex::tlmgr_install("tabularray")
 library(tinytable)
@@ -159,3 +179,5 @@ tt(criterio.Todos(tabla2, 0.5, favorable = TRUE), rownames = TRUE)
 
 En esta ocasión utilizamos directamente el criterio de todos, este nos muestra que para 5 de los 6 métodos, d1 es la mejor opción y, para 3 de ellos hay un empate con d2, y para el método de Wald el mejor sería d3. Por tanto, **la opción idónea será d1 que es ofrecer viajes internacionales.**\
 La única excepción en la que recomendaría que la decición fuera d3, sería si supiéramos que la agencia de viajes es pesimista.
+
+Por último, hemos estudiado la decisión según el método Hurzwisc en función del valor de alfa, obteniendo que si alfa está en el intervalo (0,0.143) la alternativa óptima es d3, si alfa está en (0.143, 0.467) será d2, y finalmente, si alfa\>0.467 seleccionaría la alternativa d1.
