@@ -1,0 +1,47 @@
+---
+title: "Enunciados trabajo individual 01"
+author: "Mar Canales Giner"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Ejercicio 1  
+
+Una empresa andaluza de artículos deportivos está considerando cuatro estrategias (D1, D2, D3, D4) bajo tres posibles escenarios de mercado (E1, E2, E3) para impulsar su presencia en el mercado del pádel.
+La matriz de valores numéricos (en millones de euros) bajo cada escenario viene dada en la tabla siguiente:
+
+|  | **E1** | **E2** | **E3** |
+|:-----------:|:--:|:--:|:--:|
+| **D1** | 16 | 8 | 4 |
+| **D2** | 12 | 9 | 3 |
+| **D3** | 14 | 7 | 1 |
+| **D4** | 10 | 6 | 2 |
+
+
+## Ejercicio 2
+
+Una agencia de viajes sevillana está decidiendo qué tipo de paquete turístico principal ofrecer el próximo año.
+El éxito de cada opción dependerá del nivel de demanda turística que se presente.
+Alternativas:  
+-	D1 – Ofrecer viajes internacionales  
+-	D2 – Potenciar viajes nacionales  
+-	D3 – Promocionar escapadas de fin de semana (paquetes cortos y económicos)  
+Escenarios de demanda:  
+•	E1 – Alta demanda turística: incremento general de viajes  
+•	E2 – Demanda media: comportamiento normal del mercado  
+•	E3 – Baja demanda: caída del turismo por crisis o factores externos como la guerra  
+Los siguientes valores representan los beneficios esperados (en miles de euros) para cada decisión bajo cada escenario:
+
+|  | **E1** | **E2** | **E3** |
+|:-----------:|:--:|:--:|:--:|
+| **D1** | 300 | 180 | 60 |
+| **D2** | 220 | 190 | 130 |
+| **D3** | 150 | 160 | 140 |
+
+
