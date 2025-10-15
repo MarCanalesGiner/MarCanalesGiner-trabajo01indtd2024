@@ -61,7 +61,12 @@ p1_puntoideal$AlternativaOptima
 
 # Resumen de todos
 p1_todos = criterio.Todos(tabla1,alfa=0.5, T)
-p1_todos
+# p1_todos
+
+# tinytex::reinstall_tinytex(repository = "illinois")
+# tinytex::tlmgr_install("tabularray")
+library(tinytable)
+tt(criterio.Todos(tabla1, 0.5, favorable = TRUE), rownames = TRUE)
 
 ```
 
@@ -98,7 +103,12 @@ p2_puntoideal$AlternativaOptima
 
 # Resumen de todos
 p2_todos = criterio.Todos(tabla1,alfa=0.5, F)
-p2_todos
+# p2_todos
+
+# tinytex::reinstall_tinytex(repository = "illinois")
+# tinytex::tlmgr_install("tabularray")
+library(tinytable)
+tt(criterio.Todos(tabla1, 0.5, favorable = FALSE), rownames = TRUE)
 
 ```
 
@@ -137,8 +147,12 @@ colnames(tabla2) = c("Alta demanda", "Media", "Baja")
 
 # Resolvemos con la función de todos
 p3_todos = criterio.Todos(tabla2,alfa=0.5, T)
-p3_todos
+# p3_todos
 
+# tinytex::reinstall_tinytex(repository = "illinois")
+# tinytex::tlmgr_install("tabularray")
+library(tinytable)
+tt(criterio.Todos(tabla2, 0.5, favorable = TRUE), rownames = TRUE)
 ```
 
 ## Conclusión
